@@ -15,6 +15,7 @@ const teamMembers = () => {
     date: "",
   });
 
+  // getting all the members
   const members = useTeamMembersData();
 
   const handleTeamMembersChange = (event) => {
