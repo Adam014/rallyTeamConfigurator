@@ -58,12 +58,14 @@ const teamMembers = () => {
     const docRef = doc(db, "teamMembers", teamMemberId);
     await deleteDoc(docRef);
   }
+
   return (
     <main>
       <div className='team-members-container'>
         <div className='form-member-container'>
           <h1>Create a new <span>member</span> of the team</h1>
           {/* form for submitting the new team members */}
+
           <div className='form-container'>
             <form onSubmit={handleSubmit}>
               <label>
@@ -91,6 +93,7 @@ const teamMembers = () => {
         </div>
         <div className='showcase-member-container'>
           <h1>All <span>members</span></h1>
+
           {/* div for showing from the db every team member that is created */}
           <div>
             {members.length === 0 ? (

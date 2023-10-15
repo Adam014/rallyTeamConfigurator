@@ -22,7 +22,7 @@ const racingTeams = () => {
 
   // getting all the members data
   const members = useTeamMembersData();
-  const racingTeams = useRacingTeamData();
+  const RacingTeams = useRacingTeamData();
 
   console.log(racingTeams)
 
@@ -40,10 +40,7 @@ const racingTeams = () => {
   // func for the input change and setting it into state
   const handleRacingTeamChange = (event) => {
     const { name, value } = event.target;
-    setRacingTeam((prevTeam) => ({
-      ...prevTeam,
-      [name]: value,
-    }));
+    setRacingTeam({ ...racingTeam, [name]: value });
   };
 
   // func for saving the members to array
@@ -126,13 +123,13 @@ const racingTeams = () => {
       <div className='racing-teams-showcase'>
         <h1>All <span>Racing</span> teams</h1>
         <div>
-          {racingTeams.length === 0 ? (
+          {RacingTeams.length === 0 ? (
               <div className='no-members'>
                   <p>You don't seem to have racing teams...</p>
               </div>
           ) : (
               <div className='all-teams-container'>
-                {racingTeams.map((team) => (
+                {RacingTeams.map((team) => (
                   <SingleTeam
                     key={team.id}
                     racingTeam={team}
