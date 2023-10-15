@@ -18,6 +18,7 @@ const teamMembers = () => {
   // getting all the members
   const members = useTeamMembersData();
 
+  // func for setting the input values into states
   const handleTeamMembersChange = (event) => {
     const { name, value } = event.target;
 
@@ -30,6 +31,7 @@ const teamMembers = () => {
     }
   };
 
+  // submit func for saving the member into db
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -51,6 +53,7 @@ const teamMembers = () => {
       });
   };
 
+  // func for deleting the user on page
   const handleDeleteMember = async (teamMemberId) => {
     const docRef = doc(db, "teamMembers", teamMemberId);
     await deleteDoc(docRef);

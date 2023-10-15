@@ -1,7 +1,10 @@
 import React from 'react'
 
 const Member = (props) => {
+    // props
     const { firstName, lastName, type, date} = props.teamMember
+
+    // formating the date
     const formattedDate = date ? new Date(date.seconds * 1000).toLocaleString() : "";
     return (
         <div className='member'>

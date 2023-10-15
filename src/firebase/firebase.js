@@ -12,5 +12,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+
+// variable of the collections in the db
 export const teamMembersCollection = collection(db, "teamMembers");
 export const racingTeamsCollection = collection(db, "racingTeams");
